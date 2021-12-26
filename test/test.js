@@ -1,5 +1,5 @@
 const request = require("supertest");
-const app = require("../index");
+const app = require("../server");
 
 describe("GET /", () => {
   it("respond with Landing Page", (done) => {
