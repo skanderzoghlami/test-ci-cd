@@ -2,10 +2,10 @@
   "name": "test-ci-cd",
   "version": "1.0.0",
   "description": "testing ci/cd pipeline",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha ./test/* --exit",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
