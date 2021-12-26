@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      
+
 jobs:
   test:
 
@@ -26,21 +26,4 @@ jobs:
         npm test
       env:
         CI: true
-  deploy:
-    needs: [test]
-    runs-on: ubuntu-latest
 
-    steps:
-    - name: SSH and deploy node app
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USERNAME }}
-        key: ${{ secrets.SSH_KEY }}
-        port: ${{ secrets.SSH_PORT }}
-        before_script: chmod 0777 ./node_modules/.bin/mocha 
-        script: |
-          cd ~/node-github-demo
-          git pull origin main
-          npm install --production
-          pm2 restart node-app
