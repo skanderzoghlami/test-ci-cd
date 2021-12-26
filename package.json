@@ -4,7 +4,8 @@
   "description": "testing ci/cd pipeline",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test/* --exit"
+    "test": "mocha ./test/* --exit",
+    "start": "node index.js"
 
   },
   "repository": {
