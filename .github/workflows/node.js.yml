@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-
+      
 jobs:
   test:
 
@@ -38,6 +38,7 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
+        before_script: chmod 0777 ./node_modules/.bin/mocha 
         script: |
           cd ~/node-github-demo
           git pull origin main
